@@ -66,12 +66,13 @@ def execute():
         for ob in obs:
             ob.move(canvas,2)
         if bird.check_crash(obs):
+            time.sleep(1)
             reset()
 
         root.update()
         bird.update(canvas)
         time.sleep(0.5 * constantes.tscale)
 
-        
+
 execute()
 root.mainloop()
