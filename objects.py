@@ -1,5 +1,7 @@
 import constantes
 from math import pi
+from PIL import ImageTk
+from tkinter import NW
 
 class Object():
 
@@ -47,14 +49,14 @@ class Ball(Object):
         self.volume = 4 * pi / 3 * r**3
         self.surface = 4 * pi * r**2
         Object.__init__(self,x0=x0,y0=y0,mass=mass,vx=vx,vy=vy,color=color)
+        self.picture = ImageTk.PhotoImage(file = r"media\bluebird.png")
 
     def insert(self,canvas):
-        self.image = canvas.create_oval(
+        self.image = canvas.create_image(
         self.convert_pos()[0]-self.rayon*constantes.scale,
         self.convert_pos()[1]-self.rayon*constantes.scale,
-        self.convert_pos()[0]+self.rayon*constantes.scale,
-        self.convert_pos()[1]+self.rayon*constantes.scale,
-        fill=self.color)
+        image = self.picture,
+        anchor= NW)
     def update(self,canvas):
         self.vx = self.ax * constantes.tscale + self.vx
         self.vy = self.ay * constantes.tscale + self.vy
