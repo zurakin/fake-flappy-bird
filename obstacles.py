@@ -28,7 +28,7 @@ class Obstacle:
         )
 
     def move(self,canvas,speed):
-        if self.x <0 :
+        if self.x <-30 :
             Obstacle.__init__(self,constantes.width+30)
             canvas.delete(self.image[0])
             canvas.delete(self.image[1])
