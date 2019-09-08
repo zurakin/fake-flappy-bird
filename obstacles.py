@@ -13,23 +13,23 @@ class Obstacle:
         self.image.append(canvas.create_rectangle(
         self.x,
         constantes.height-self.height,
-        self.x + 20,
+        self.x + 30,
         constantes.height,
-        fill = 'black'
+        fill = 'yellow'
         ))
         self.image.append(
         canvas.create_rectangle(
         self.x,
         0,
-        self.x + 20,
+        self.x + 30,
         constantes.height-self.height - self.hole_size,
-        fill = 'black'
+        fill = 'yellow'
         )
         )
 
     def move(self,canvas,speed):
         if self.x <0 :
-            Obstacle.__init__(self,constantes.width+20)
+            Obstacle.__init__(self,constantes.width+30)
             canvas.delete(self.image[0])
             canvas.delete(self.image[1])
             self.insert(canvas)

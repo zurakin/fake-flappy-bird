@@ -4,6 +4,7 @@ import objects
 import time
 import constantes
 import obstacles
+from PIL import ImageTk
 
 
 def jump(*args):
@@ -18,6 +19,8 @@ root = Tk()
 root.title('Flappy Flippin Bird')
 canvas = Canvas(root,width = constantes.width,height = constantes.height)
 canvas.grid()
+background = ImageTk.PhotoImage(file = r"media\background.jpg")
+canvas.create_image(0,0,image = background ,anchor = NW)
 
 #create bird object
 bird = objects.Ball(r= 0.4,x0 = 1,y0 = 5 ,mass = 2 ,vx=0,vy=0,color='blue')

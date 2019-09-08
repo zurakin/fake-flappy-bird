@@ -3,10 +3,10 @@
 g=10
 
 ##scale choice
-width = 800
-height = 600
+width = 1280
+height = 920
 hval = 10   #how long is the canvas irl
-tscale = 1/30  #time scale
+tscale = 1/60  #time scale
 scale = height/hval   #distance scale
 
 
