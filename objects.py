@@ -1,6 +1,6 @@
 import constantes
 from math import pi
-from PIL import ImageTk
+from PIL import ImageTk, Image
 from tkinter import NW
 
 class Object():
@@ -46,7 +46,8 @@ class Bird(Object):
 
     def __init__(self,x0,y0,mass,vx=0,vy=0):
         Object.__init__(self,x0=x0,y0=y0,mass=mass,vx=vx,vy=vy)
-        self.picture = ImageTk.PhotoImage(file = r"media\rbluebird.png")
+        self.loadpicture = Image.open(r"media/rbluebird.png")
+        self.picture = ImageTk.PhotoImage(image = self.loadpicture)
 
     def insert(self,canvas):
         self.image = canvas.create_image(

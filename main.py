@@ -4,7 +4,7 @@ import objects
 import time
 import constantes
 import obstacles
-from PIL import ImageTk
+from PIL import ImageTk, Image
 
 
 def jump(*args):
@@ -51,7 +51,8 @@ root.bind("<Up>",jump)
 canvas = Canvas(root,width = constantes.width,height = constantes.height)
 canvas.grid()
 
-background = ImageTk.PhotoImage(file = r"media\background.jpg")
+loadback = Image.open(r"media/background.jpg")
+background = ImageTk.PhotoImage(image = loadback)
 canvas.create_image(0,0,image = background ,anchor = NW)
 
 def execute():
